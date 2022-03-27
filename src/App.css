@@ -1,38 +1,120 @@
-.App {
+body {
+  background-color: #ffeacf;
+  max-width: 600px;
+  margin: auto;
+  font-family: 'Poppins';
+}
+
+main {
+  margin-top: 20px;
+}
+
+.header {
+  border-style: solid 0.8em;
+  padding: 15px;
+  width: 100%;
+  background-color: #fff4a8;
+}
+
+.header > h1 {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.header > p {
+  font-size: 14px;
+  font-style: italic;
+}
+
+.areas {
+  margin-top: 20px;
   text-align: center;
+  font-size: 1.4rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.areas > select {
+  font-size: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.deals {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  row-gap: 15px;
 }
 
-.App-link {
-  color: #61dafb;
+.deal {
+  display: grid;
+  border: 1px solid #546762;
+  border-radius: 12px;
+  grid-template-columns: 150px auto;
+  min-height: 200px;
+  padding: 5px;
+  column-gap: 8px;
+  font-size: 14px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+.deal-picture > img {
+  border-radius: 6px;
+  border: 1px;
+  height: 150px;
+  width: 150px;
+}
+
+.deal-information {
+  margin-left: 10px;
+}
+
+.deal-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #546762;
+}
+
+.deal-category {
+  margin-top: 5px;
+}
+
+.deal-price, .deal-posteddate {
+  text-align: right;
+  margin-right: 15px;
+}
+
+.deal-price {
+  margin-top: 30px;
+  font-weight: bolder;
+}
+
+/* Spinner to use for loading time */
+.spinner {
+  display: inline-block;
+  position: relative;
+  width: 60px;
+  height: 60px;
+}
+.spinner:after {
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 8px;
+  box-sizing: border-box;
+  border: 32px solid rgb(38, 250, 73);
+  border-color: rgb(228, 132, 188) transparent rgb(228, 132, 188) transparent;
+  animation: spinner 1.2s infinite;
+}
+@keyframes spinner {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
   }
 }
